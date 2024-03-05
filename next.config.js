@@ -1,15 +1,18 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    images: {
-        remotePatterns: [
-          {
-            protocol: 'https',
-            hostname: 'www.orbis.com.ar',
-            port: '',
-            pathname: '/wp-content/themes/barberry/images/**',
-          },
-        ],
-      },
-}
+/**
+ * @format
+ * @type {import('next').NextConfig}
+ */
+// next.config.js
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true',
+});
 
-module.exports = nextConfig
+const nextConfig = {
+	reactStrictMode: true,
+	poweredByHeader: false,
+	images: {
+		domains: ['cdn.jimuku.com'],
+	},
+};
+
+module.exports = withBundleAnalyzer(nextConfig);
