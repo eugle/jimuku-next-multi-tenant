@@ -46,6 +46,7 @@ jobs:
                   username: ${{ env.SSH_USERNAME }}
                   password: ${{ env.SSH_PASSWORD }}
                   port: ${{ env.SSH_PORT }}
+                  sync: true
                   script: |
                       docker pull eugle/jimuku-next-multi-tenant:latest
                       docker stop jimuku.com
