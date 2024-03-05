@@ -11,7 +11,20 @@ const nextConfig = {
 	reactStrictMode: true,
 	poweredByHeader: false,
 	images: {
-		domains: ['cdn.jimuku.com'],
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'www.orbis.com.ar',
+				port: '',
+				pathname: '/wp-content/themes/barberry/images/**',
+			},
+			{
+				protocol: 'https',
+				hostname: 'cdn.jimuku.com',
+				port: '',
+				pathname: '/',
+			},
+		],
 	},
 };
 
