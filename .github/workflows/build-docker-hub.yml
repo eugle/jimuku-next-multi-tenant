@@ -1,0 +1,53 @@
+# @format
+
+name: Build image docker hub
+
+on:
+    push: # 当发生推送事件时
+        tags: # 当推送 tag 时
+            - v*
+        branches: # 当推送分支时
+            - release
+        #paths: [ src/* ]
+    pull_request: # 当发生合并事件时
+        branches:
+            - master
+# 流水线变量查看：https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
+
+env:
+    WORKFLOW_ID: ${{github.run_id}}
+    WORKFLOW_NUMBER: ${{github.run_number}}
+    WORKFLOW_WORKSPACE: ${{github.workspace}}
+    WORKFLOW_COMMITID: ${{github.sha}}
+
+    DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+    DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+    SSH_HOST: ${{ secrets.SSH_HOST }}
+    SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+    SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+    SSH_PORT: ${{ secrets.SSH_PORT }}
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@master
+            - name: Publish to Docker Repository
+              uses: elgohr/Publish-Docker-Github-Action@master
+              with:
+                  name: eugle/jimuku-next-multi-tenant
+                  username: ${{ env.DOCKER_USERNAME }}
+                  password: ${{ env.DOCKER_PASSWORD }}
+            - name: Connect to remote server and run command
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ env.SSH_HOST }}
+                  username: ${{ env.SSH_USERNAME }}
+                  password: ${{ env.SSH_PASSWORD }}
+                  port: ${{ env.SSH_PORT }}
+                  script: |
+                      docker pull eugle/jimuku-next-multi-tenant:latest
+                      docker stop jimuku.com
+                      docker rm jimuku.com
+                      docker run -itd --name jimuku.com -v /home/wwwroot/next/domain/jimuku/data:/data -p 3002:3000 eugle/jimuku-next-multi-tenant:latest

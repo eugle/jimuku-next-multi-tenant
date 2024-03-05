@@ -1,0 +1,1 @@
+docker pull eugle/jimuku-client-nextjs:latest&&docker stop old.jimuku.com&&docker rm old.jimuku.com&&docker run -itd --name old.jimuku.com -v /home/wwwroot/next/domain/admin/data:/data -p 3008:3000 eugle/jimuku-client-nextjs:latest

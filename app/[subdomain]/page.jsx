@@ -8,7 +8,6 @@ export default function Component() {
 
   const params = useParams();
   const tenant = params.subdomain;
-  console.log(tenant)
 
   return (
     <div className="flex flex-col min-h-screen">
