@@ -15,21 +15,18 @@ export default function Hero() {
                         </div>
                     </div>
                     <div className="text-center">
-                        <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold tracking-tight text-gray-900">
+                        <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight text-gray-900">
                             移动端优先的极简官网
                         </h1>
                         <p className="mt-4 md:mt-6 text-sm md:text-lg leading-5 md:leading-8 font-light text-gray-600">
-                            积木库是一个移动端优先的自助建站系统，注册免费试用，不限时长
-                        </p>
-                        <p className="mt-2 text-sm  md:text-lg leading-5 md:leading-8 font-light text-gray-600">
-                            满意后再申请正式上线，298全包，仅限中小企业用户
+                            积木库是一个移动端优先的自助建站系统，注册免费试用，不限时长。满意后再申请正式上线，298全包。
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a
                                 href="/account/login"
-                                className="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                className="rounded-md bg-indigo-600 px-6 py-4 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                             >
-                                免费自助创建
+                                开始创建
                             </a>
                             <a href="#" className="text-sm font-light leading-6 text-gray-900 hover:text-gray-700">
                                 功能明细 <span aria-hidden="true">→</span>

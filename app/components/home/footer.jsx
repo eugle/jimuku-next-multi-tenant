@@ -24,9 +24,11 @@ export default function Footer() {
                             <span className="mx-1">视频教程</span>
                         </button>
 
-                        <button className="w-full px-5 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md sm:mx-2 sm:order-2 sm:w-auto hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                            立即创建
-                        </button>
+                        <Link href='/account/login'>
+                            <button className="w-full px-5 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-indigo-600 rounded-md sm:mx-2 sm:order-2 sm:w-auto hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
+                                立即创建
+                            </button>
+                        </Link>
                     </div>
                 </div>
 

@@ -15,7 +15,17 @@ export default async function middleware(req) {
 	const subdomain = hostname.split('.')[0];
 
 	// 这些域名直接访问主页
-	const allowedDomains = ['localhost:3000', 'jimuku.com', 'www'];
+	const allowedDomains = [
+		'localhost:3000',
+		'jimuku',
+		'www',
+		'www1',
+		'wwww',
+		'office',
+		'master',
+		'manage',
+		'manager',
+	];
 
 	// 判断是不是子域名
 	const isAllowedDomain = allowedDomains.find(

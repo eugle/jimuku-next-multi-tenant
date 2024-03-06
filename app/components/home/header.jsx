@@ -150,7 +150,7 @@ export default function Header() {
                                     {({ open }) => (
                                         <>
                                             <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                                Product
+                                                轻快极简的产品系列
                                                 <ChevronDownIcon
                                                     className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
                                                     aria-hidden="true"
@@ -175,27 +175,33 @@ export default function Header() {
                                     href="#"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
-                                    Features
+                                    定制
                                 </a>
                                 <a
                                     href="#"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
-                                    Marketplace
+                                    教程
                                 </a>
                                 <a
                                     href="#"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
-                                    Company
+                                    公司
+                                </a>
+                                <a
+                                    href="#"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                >
+                                    AI内容生成辅助系统
                                 </a>
                             </div>
                             <div className="py-6">
                                 <a
-                                    href="#"
+                                    href="/account/login"
                                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
-                                    登陆
+                                    登陆 <span aria-hidden="true">&rarr;</span>
                                 </a>
                             </div>
                         </div>
