@@ -33,7 +33,7 @@ export default function Manage() {
                 <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
                     <div className="lg:pr-4">
                         <div className="lg:max-w-lg">
-                            <p className="text-base font-light leading-7 text-indigo-600">功能强大的</p>
+                            <p className="text-base font-light leading-7 text-indigo-600">功能强大易用</p>
                             <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">云端管理系统</h1>
                             <p className="mt-6 text-xl leading-8 text-gray-700 font-light">
                                 一个云端管理统一管理所有数据，随时随地都能方便地上传和更新内容，功能齐全，使用方便。
@@ -80,7 +80,7 @@ export default function Manage() {
                             <p className="mt-8 font-light">
                                 后台管理系统在不断更新，在使用上力求易用，易操作。降低学习成本，所有管理内容都清晰明了，所见即所得，更新后，前端能即时展现最新内容。
                             </p>
-                            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">功能齐全的.</h2>
+                            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">内容模块齐全</h2>
                             <p className="mt-6 font-light">
                                 后台内容管理系统中，包含了简介、产品、新闻、案例、作品、服务、团队、招聘、经销商、视频、下载、联系等常见内容（部份内容视前台模块确定是否展现）。
                             </p>

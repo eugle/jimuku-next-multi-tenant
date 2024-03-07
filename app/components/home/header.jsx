@@ -11,15 +11,16 @@ import {
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, ChatBubbleLeftEllipsisIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link';
 
 const products = [
-    { name: '极简官网', description: '轻松快速地完成宣传型企业官网的创建', href: '#', icon: DeviceTabletIcon },
-    { name: '极简商城', description: '简单高效地创建你的独立极简商城', href: '#', icon: ShoppingBagIcon },
-    { name: '外贸官网', description: '基于海外服务器的宣传型英文产品官网', href: '#', icon: GlobeEuropeAfricaIcon },
+    { name: '极简官网', description: '轻松快速地完成宣传型企业官网的创建', href: '/official/product/website', icon: DeviceTabletIcon },
+    { name: '极简商城', description: '简单高效地创建你的独立极简商城', href: '/official/product/store', icon: ShoppingBagIcon },
+    { name: '外贸官网', description: '基于海外服务器的宣传型英文产品官网', href: '/official/product/trade', icon: GlobeEuropeAfricaIcon },
 ]
 const callsToAction = [
-    { name: '创建教程', href: '#', icon: PlayCircleIcon },
-    { name: '联系销售', href: '#', icon: ChatBubbleLeftEllipsisIcon },
+    { name: '创建教程', href: '/official/tutorial', icon: PlayCircleIcon },
+    { name: '联系销售', href: '/official/contact', icon: ChatBubbleLeftEllipsisIcon },
 ]
 
 function classNames(...classes) {
@@ -33,12 +34,12 @@ export default function Header() {
         <header className="bg-white">
             <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 border-b-[1px] border-gray-200" aria-label="Global">
                 <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
+                    <Link href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
                         <img className="h-6 w-auto" src="/logo/logo-only-photo.svg"
                             alt="积木库 - 官网298全包, 移动端优先疯狂建站师"
                             title="积木库 - 官网298全包, 移动端优先疯狂建站师" />
-                    </a>
+                    </Link>
                 </div>
                 <div className="flex lg:hidden">
                     <button
@@ -77,10 +78,10 @@ export default function Header() {
                                                 <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
                                             </div>
                                             <div className="flex-auto">
-                                                <a href={item.href} className="block font-semibold text-gray-900  hover:text-gray-700">
+                                                <Link href={item.href} className="block font-semibold text-gray-900  hover:text-gray-700">
                                                     {item.name}
                                                     <span className="absolute inset-0" />
-                                                </a>
+                                                </Link>
                                                 <p className="mt-1 text-gray-600">{item.description}</p>
                                             </div>
                                         </div>
@@ -88,52 +89,52 @@ export default function Header() {
                                 </div>
                                 <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
                                     {callsToAction.map((item) => (
-                                        <a
+                                        <Link
                                             key={item.name}
                                             href={item.href}
                                             className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
                                         >
                                             <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
                                             {item.name}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                             </Popover.Panel>
                         </Transition>
                     </Popover>
 
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900  hover:text-gray-700">
+                    <Link href="/official/custom" className="text-sm font-semibold leading-6 text-gray-900  hover:text-gray-700">
                         定制
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">
+                    </Link>
+                    <Link href="/official/tutorial" className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">
                         教程
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">
+                    </Link>
+                    {/* <Link href="/official/company" className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">
                         公司
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">
+                    </Link>
+                    <Link href="/official/aigc" className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">
                         AI内容生成辅助系统
-                    </a>
+                    </Link> */}
                 </Popover.Group>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="/account/login" className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">
+                    <Link href="/account/login" className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">
                         登陆 <span aria-hidden="true">&rarr;</span>
-                    </a>
+                    </Link>
                 </div>
             </nav>
             <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                 <div className="fixed inset-0 z-10" />
                 <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
-                        <a href="#" className="-m-1.5 p-1.5">
+                        <Link href="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
                             <img
                                 className="h-6 w-auto"
                                 src="/logo/logo-only-photo.svg"
-                                alt="积木库 - 积木库 - 官网298全包, 移动端优先疯狂建站师"
-                                title="积木库 - 积木库 - 官网298全包, 移动端优先疯狂建站师"
+                                alt="积木库 - 官网298全包, 移动端优先疯狂建站师"
+                                title="积木库 - 官网298全包, 移动端优先疯狂建站师"
                             />
-                        </a>
+                        </Link>
                         <button
                             type="button"
                             className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -171,38 +172,38 @@ export default function Header() {
                                         </>
                                     )}
                                 </Disclosure>
-                                <a
-                                    href="#"
+                                <Link
+                                    href="/official/custom"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
                                     定制
-                                </a>
-                                <a
-                                    href="#"
+                                </Link>
+                                <Link
+                                    href="/official/tutorial"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
                                     教程
-                                </a>
-                                <a
-                                    href="#"
+                                </Link>
+                                {/* <Link
+                                    href="/official/company"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
                                     公司
-                                </a>
-                                <a
-                                    href="#"
+                                </Link>
+                                <Link
+                                    href="/official/aigc"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
                                     AI内容生成辅助系统
-                                </a>
+                                </Link> */}
                             </div>
                             <div className="py-6">
-                                <a
+                                <Link
                                     href="/account/login"
                                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
                                     登陆 <span aria-hidden="true">&rarr;</span>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
