@@ -5,7 +5,7 @@
 import Banner from '@/app/components/home/banner';
 import Header from '@/app/components/home/header';
 import Footer from '@/app/components/home/footer';
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon, RadioIcon, SquaresPlusIcon, ClipboardIcon, PhoneIcon } from '@heroicons/react/24/outline'
 
 
 export default function Custom() {
@@ -14,25 +14,25 @@ export default function Custom() {
 		  name: '文章模块',
 		  description:
 			'通过创建单页文章内容，实现企业简介、业务介绍、品牌介绍等各种自定义的单页宣传内容',
-		  icon: CloudArrowUpIcon,
+		  icon: ClipboardIcon,
 		},
 		{
 		  name: '产品模块',
 		  description:
 			'实现产品的分类展示，通过图片和文字混合的形式，展示产品和宣传产品',
-		  icon: LockClosedIcon,
+		  icon: SquaresPlusIcon,
 		},
 		{
 		  name: '新闻模块',
 		  description:
 			'随时更新公司动态，发布最新消息，图文形式，实现新闻内容的发布',
-		  icon: ArrowPathIcon,
+		  icon: RadioIcon,
 		},
 		{
 		  name: '联系留言',
 		  description:
 			'展示公司的联系方式，公司的地图位置，在线留言等模块功能的集合',
-		  icon: FingerPrintIcon,
+		  icon: PhoneIcon,
 		},
 	  ]
 	return (
@@ -42,7 +42,7 @@ export default function Custom() {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-indigo-600">功能明细</h2>
+          <h2 className="text-base font-light leading-7 text-indigo-600">功能明细</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             主要功能模块
           </p>
