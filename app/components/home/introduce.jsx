@@ -31,15 +31,15 @@ const features = [
 
 export default function Introduce() {
     return (
-        <div className="bg-white py-24 sm:py-32">
+        <div className="bg-white py-10 sm:py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:text-center">
                     <h2 className="text-base font-light leading-7 text-indigo-600">极简官网，快速上线</h2>
                     <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                        简单易用，不用任何专业知识
+                        不用任何专业基础
                     </p>
                     <p className="mt-6 text-lg font-light leading-8 text-gray-600">
-                        无需编程，不用懂设计和代码，更不用任何做网站的专业知识。会打字，会组织内容即可完成网站建设。
+                        无需编程，不用懂设计和代码，更不用任何做网站的专业知识。会打字，会组织内容即可完成网站建设
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

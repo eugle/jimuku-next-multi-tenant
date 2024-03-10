@@ -3,22 +3,45 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export default function SignUp() {
+async function getData() {
+    const res = await fetch('http://localhost:3006/auth/me', {
+        method: 'GET',
+        headers: {
+            "x-tenant": "www",
+            "Content-Type": "application/json",
+            "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJzdWIiOiI2NWVkNWUwYjQ2YjhlYzVkNGZjMWUyYzEiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MTAwOTI0OTMsImV4cCI6MTcxMDA5NjA5M30.ePzJA41jCr7izm0WdB7yyhDW9NZHIzp9Gn3gZCKy0dw"
+        },
+        // body: JSON.stringify({name: 'admin', password: '123456'}),
+    })
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+   
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error('Failed to fetch data')
+    }
+   
+    return res.json()
+  }
 
+export default function SignUp() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [repassword, setRePassword] = useState("");
 
     // Register User
-    const onSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (password !== repassword) {
-
-            return false;
+        try {
+            const data = await getData()
+          console.log(data);
+        //   router.replace('/profile');
+        } catch (err) {
+            console.log(err);
+            console.log('Error: ',err?.response?.data);
         }
-
-    };
-
+      }
+    
     return (
         <div className="flex flex-1 min-h-full flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -29,7 +52,7 @@ export default function SignUp() {
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form className="space-y-6" onSubmit={onSubmit}>
+                <form className="space-y-6" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="username" className="block text-sm font-medium leading-4 text-gray-900">
                             登陆名

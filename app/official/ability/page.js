@@ -67,7 +67,7 @@ export default function Custom() {
 		<>
 			<Banner />
 			<Header />
-			<div className="bg-white py-24 sm:py-32">
+			<div className="bg-white py-10 sm:py-24">
 				<div className="mx-auto max-w-7xl px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl lg:text-center">
 					<h2 className="text-base font-light leading-7 text-indigo-600">版本间的区别</h2>

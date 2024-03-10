@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="bg-white dark:bg-gray-900">
+        <footer className="bg-white">
             <div className="container px-6 py-8 mx-auto max-w-7xl">
                 <div className="flex flex-col items-center text-center">
                     <Link href="/">
@@ -27,7 +27,7 @@ export default function Footer() {
                                 <span className="mx-1">视频教程</span>
                             </button>
                         </Link>
-
+                        <div className='p-2 sm:p-0'/>
                         <Link href='/account/login'>
                             <button className="w-full px-5 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-indigo-600 rounded-md sm:mx-2 sm:order-2 sm:w-auto hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
                                 立即创建
