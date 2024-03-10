@@ -4,27 +4,27 @@ import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from
 
 const features = [
     {
-        name: '上线快一点',
+        name: '上线快',
         description:
-            '让网站更快，内容更少，使客户能以尽量少的时间了解您，达到宣传展示的目的。',
+            '从注册到上线，最快30分钟。以移动端适配优先，紧跟用户使用习惯。',
         icon: CloudArrowUpIcon,
     },
     {
-        name: '网站安全一点',
+        name: '极简风',
         description:
-            '中小企业通过实名认证，绑定独立域名并通过内容审核，即获赠免费SSL加密证书。',
+            '极简设计，使官网清爽简洁，内容清晰明了，放弃华而不实，回归本质。',
         icon: LockClosedIcon,
     },
     {
-        name: '更新方便一点',
+        name: '易更新',
         description:
-            '在任何时候，都可快速更新网站内容，无需假手于人，让内容更新更方便一些。',
+            '任何时候，都可以快速更新和迭代网站内容，何必假手于人，自己来更方便。',
         icon: ArrowPathIcon,
     },
     {
-        name: '使用简单一点',
+        name: '易使用',
         description:
-            '所有功能尽量做到简单，再简单，降低学习门槛，所见即所得，快速轻松上手。',
+            '使用操作，尽量简单，降低学习门槛，所见即所得，快速轻松上手。',
         icon: FingerPrintIcon,
     },
 ]
@@ -34,12 +34,12 @@ export default function Introduce() {
         <div className="bg-white py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:text-center">
-                    <h2 className="text-base font-light leading-7 text-indigo-600">如无必要，勿增实体</h2>
+                    <h2 className="text-base font-light leading-7 text-indigo-600">极简官网，快速上线</h2>
                     <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                        多为初创企业考虑一点
+                        简单易用，不用任何专业知识
                     </p>
                     <p className="mt-6 text-lg font-light leading-8 text-gray-600">
-                        针对中小企业用户，事情做少一点，只关注真正有效的内容，以轻松快速的方式，上传内容并快速审核发布，降低沟通和时间成本
+                        无需编程，不用懂设计和代码，更不用任何做网站的专业知识。会打字，会组织内容即可完成网站建设。
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

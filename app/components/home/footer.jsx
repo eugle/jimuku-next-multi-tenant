@@ -9,11 +9,13 @@ export default function Footer() {
             <div className="container px-6 py-8 mx-auto max-w-7xl">
                 <div className="flex flex-col items-center text-center">
                     <Link href="/">
-                        <img className="w-auto h-7" src="/logo/logo-only-photo.svg" alt="积木库 - 官网298全包, 移动端优先疯狂建站师"
-                            title="积木库 - 官网298全包, 移动端优先疯狂建站师" />
+                        <img className="w-auto h-7" src="/logo/logo-only-photo.svg" alt="积木库 - 移动端优先的免费自助建站平台"
+                            title="积木库 - 移动端优先的免费自助建站平台" />
                     </Link>
 
-                    <p className="max-w-md mx-auto mt-4 text-gray-500 dark:text-gray-400 font-light">官网298全包, 移动端优先疯狂建站师</p>
+                    <p className="max-w-md mx-auto mt-4 text-gray-500 dark:text-gray-400 font-light">
+                        积木库 - 移动端优先的免费自助建站平台
+                    </p>
 
                     <div className="flex flex-col mt-4 sm:flex-row sm:items-center sm:justify-center">
                         <Link href='/official/tutorial'>

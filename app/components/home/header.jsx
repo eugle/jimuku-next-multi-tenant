@@ -37,8 +37,8 @@ export default function Header() {
                     <Link href="/" className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
                         <img className="h-6 w-auto" src="/logo/logo-only-photo.svg"
-                            alt="积木库 - 官网298全包, 移动端优先疯狂建站师"
-                            title="积木库 - 官网298全包, 移动端优先疯狂建站师" />
+                            alt="积木库 - 移动端优先的免费自助建站平台"
+                            title="积木库 - 移动端优先的免费自助建站平台" />
                     </Link>
                 </div>
                 <div className="flex lg:hidden">
@@ -131,8 +131,8 @@ export default function Header() {
                             <img
                                 className="h-6 w-auto"
                                 src="/logo/logo-only-photo.svg"
-                                alt="积木库 - 官网298全包, 移动端优先疯狂建站师"
-                                title="积木库 - 官网298全包, 移动端优先疯狂建站师"
+                                alt="积木库 - 移动端优先的免费自助建站平台"
+                                title="积木库 - 移动端优先的免费自助建站平台"
                             />
                         </Link>
                         <button
