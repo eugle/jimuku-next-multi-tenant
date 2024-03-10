@@ -25,12 +25,12 @@ export default function Custom() {
 				{text: '新闻模块', icon: CheckIcon},
 				{text: '视频模块', icon: CheckIcon},
 				{text: '在线留言', icon: CheckIcon},
+				{text: '文件管理系统', icon: CheckIcon},
 				{text: '多端适配', icon: CheckIcon},
-				{text: '微信公众号', icon: CheckIcon},
-				{text: '企业认证审核', icon: CheckIcon},
-				{text: '广告违禁词审查', icon: CheckIcon},
-				{text: '内容审查', icon: CheckIcon},
-				{text: '人工客服工单问答', icon: CheckIcon},
+				{text: '企业认证', icon: CheckIcon},
+				{text: '上线审核', icon: CheckIcon},
+				{text: '广告违禁词审查', icon: XMarkIcon, color: 'text-red-600'},
+				{text: '人工客服工单问答', icon: XMarkIcon, color: 'text-red-600'},
 				{text: '绑定独立域名', icon: XMarkIcon, color: 'text-red-600'},
 				{text: '部署加密SSL证书', icon: XMarkIcon, color: 'text-red-600'},
 			]
@@ -51,11 +51,11 @@ export default function Custom() {
 				{text: '新闻模块', icon: CheckIcon},
 				{text: '视频模块', icon: CheckIcon},
 				{text: '在线留言', icon: CheckIcon},
+				{text: '文件管理系统', icon: CheckIcon},
 				{text: '多端适配', icon: CheckIcon},
-				{text: '微信公众号', icon: CheckIcon},
-				{text: '企业认证审核', icon: CheckIcon},
+				{text: '企业认证', icon: CheckIcon},
+				{text: '上线审核', icon: CheckIcon},
 				{text: '广告违禁词审查', icon: CheckIcon},
-				{text: '内容审查', icon: CheckIcon},
 				{text: '人工客服工单问答', icon: CheckIcon},
 				{text: '绑定独立域名', icon: CheckIcon},
 				{text: '部署加密SSL证书', icon: CheckIcon},
@@ -70,7 +70,7 @@ export default function Custom() {
 			<div className="bg-white py-24 sm:py-32">
 				<div className="mx-auto max-w-7xl px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl lg:text-center">
-					<h2 className="text-base font-light leading-7 text-indigo-600">专业版的区别</h2>
+					<h2 className="text-base font-light leading-7 text-indigo-600">版本间的区别</h2>
 					<p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
 						免费版 和 专业版
 					</p>
