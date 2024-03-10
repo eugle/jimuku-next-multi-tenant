@@ -102,7 +102,7 @@ export default function Custom() {
 								</div>
 								<div className="pl-2">
 									{item.list.map(feature => (
-										<div className="text-sm font-light leading-8 flex flex-row">
+										<div className="text-sm font-light leading-8 flex flex-row" key={feature.text}>
 											<div className="flex items-center">
 												<feature.icon className={`h-4 w-4 ${feature.color || 'text-green-600'}`} aria-hidden="true" />
 											</div>
