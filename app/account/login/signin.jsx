@@ -16,10 +16,6 @@ async function login(data) {
         body: JSON.stringify(data)
     })
    
-    if (!res.ok) {
-      throw new Error('Failed to fetch data')
-    }
-   
     return res.json()
 }
 
@@ -53,14 +49,23 @@ export default function SignUp() {
             }
             setDesabled('desabled');
             const data = await login({name: username, password})
-            cogoToast.error('恭喜,登陆成功!');
+            if(data.status === 401) {
+                cogoToast.error('用户或密码不正确，请重试!');
+                setDesabled('');
+                setUsername('');
+                setPassword('');
+            }else{
+                cogoToast.error('恭喜,登陆成功!');
 
-            if(window !== "undefined"){
-                localStorage.setItem('UserToken', data.access_token);
+                if(window !== "undefined"){
+                    localStorage.setItem('UserToken', data.access_token);
+                }
+                setDesabled('');
+                router.replace('/account');
             }
-            setDesabled('');
-            router.replace('/account');
+            
         }catch (err) {
+            console.log(err)
             console.log('Error: ',err?.response?.data);
         }
 
