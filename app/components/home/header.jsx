@@ -55,8 +55,9 @@ export default function Header() {
             getData(historyUser).then(res => {
                 if(res.statusCode === 401){
                     localStorage.setItem('UserToken', '')
+                }else{
+                    setUser(res);
                 }
-                setUser(res);
             });
         }
     },[]);

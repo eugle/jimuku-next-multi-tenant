@@ -41,8 +41,9 @@ export default function Account() {
             getData(historyUser).then(res => {
                 if(res.statusCode === 401){
                     localStorage.setItem('UserToken', '')
+                }else{
+                    setUser(res);
                 }
-                setUser(res);
             });
 
             setLoaded(false);
