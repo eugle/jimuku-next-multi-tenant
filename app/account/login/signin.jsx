@@ -1,16 +1,68 @@
-
 "use client";
-import { useState } from "react";
+
+import { useState, useRef } from "react";
+import { useRouter } from 'next/navigation';
 import Link from "next/link";
+import basePath from "@/app/utils/config";
+import cogoToast from '@successtar/cogo-toast';
+
+async function login(data) {
+    const res = await fetch(`${basePath}/auth/login`, {
+        method: 'POST',
+        headers: {
+            "x-tenant": "www",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+   
+    if (!res.ok) {
+      throw new Error('Failed to fetch data')
+    }
+   
+    return res.json()
+}
 
 export default function SignUp() {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [desabled, setDesabled] = useState('');
 
-    const onSubmit = (e) => {
+    const refusername = useRef(null);
+    const refpassword = useRef(null);
+
+    const router = useRouter()
+
+    const onSubmit = async (e) => {
         e.preventDefault();
 
+        try{
+            if(username?.length < 3){
+                cogoToast.error('登陆名至少需要3个字符!');
+                refusername.current?.focus();
+                refusername.current?.select();
+                return false;
+            }
+
+            if(password?.length < 6){
+                cogoToast.error('密码至少需要6个字符!');
+                refpassword.current?.focus();
+                refpassword.current?.select();
+                return false;
+            }
+            setDesabled('desabled');
+            const data = await login({name: username, password})
+            cogoToast.error('恭喜,登陆成功!');
+
+            if(window !== "undefined"){
+                localStorage.setItem('UserToken', data.access_token);
+            }
+            setDesabled('');
+            router.replace('/account');
+        }catch (err) {
+            console.log('Error: ',err?.response?.data);
+        }
 
     };
 
@@ -32,7 +84,7 @@ export default function SignUp() {
                             登陆名
                         </label>
                         <div className="mt-2">
-                            <input id="username" name="username" type="username" autoComplete="username" value={username} onChange={(e) => setUsername(e.target.value)} required className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            <input ref={refusername} desabled={desabled} id="username" name="username" type="username" autoComplete="username" value={username} onChange={(e) => setUsername(e.target.value)} required className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
                     </div>
 
@@ -43,16 +95,15 @@ export default function SignUp() {
                             </label>
                         </div>
                         <div className="mt-2">
-                            <input id="password" name="password" type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} required className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            <input ref={refpassword} desabled={desabled} id="password" name="password" type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} required className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                         </div>
                     </div>
 
-
                     <div>
-                        <button className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                            type="submit"
+                        <button className={`${desabled ? 'bg-gray-400 hover:bg-gray-400' : 'bg-indigo-600 hover:bg-indigo-500'} flex w-full justify-center rounded-md  px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
+                            type={desabled ? 'button' : "submit"}
                         >
-                            立即登陆
+                            {desabled ? '正在登录，请稍等...' : '立即登录'}
                         </button>
                     </div>
                 </form>
@@ -69,7 +120,6 @@ export default function SignUp() {
                                 去注册
                             </button>
                         </Link>
-
                     </div>
                 </div>
             </div>

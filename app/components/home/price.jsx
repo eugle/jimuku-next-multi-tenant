@@ -1,3 +1,5 @@
+'use client'
+
 import { CheckIcon } from '@heroicons/react/20/solid'
 
 const includedFeatures = [
@@ -9,7 +11,7 @@ const includedFeatures = [
     '内容审核，确保内容合规合法',
 ]
 
-export default function Price() {
+export default function Price({user}) {
     return (
         <div className="bg-white py-10 sm:py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -54,10 +56,10 @@ export default function Price() {
                                     <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">RMB</span>
                                 </p>
                                 <a
-                                    href="/account/register"
+                                    href={user?"/website/create":"/account/register"}
                                     className="mt-10 block w-full rounded-md bg-indigo-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 >
-                                    开始创建
+                                    {user?'快速创建':'免费注册'}
                                 </a>
                                 <p className="mt-6 text-xs leading-5 text-gray-600 font-light">
                                     提供发票和收据，方便公司报销

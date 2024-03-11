@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export default function Hero() {
+export default function Hero({user}) {
     return (
         <div className="bg-white">
             <div className="relative isolate p-6 lg:p-8">
@@ -25,10 +25,10 @@ export default function Hero() {
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <Link
-                                href="/account/login"
+                                href={user?"/website/create":"/account/register"}
                                 className="rounded-md bg-indigo-600 px-6 py-4 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                             >
-                                免费创建
+                                {user?'快速创建':'免费注册'}
                             </Link>
                             <Link href="/official/ability" className="rounded-md text-sm px-5 py-[13px] border-[1px] border-gray-300 hover:border-gray-200 shadow-sm font-light leading-6 text-gray-900 hover:text-gray-700">
                                 版本区别 <span aria-hidden="true">→</span>

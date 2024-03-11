@@ -1,16 +1,25 @@
 "use client";
 
 import { XMarkIcon } from '@heroicons/react/20/solid'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Banner() {
     const [hide, setHide] = useState(false);
+    const [user, setUser] = useState('');
+    const [loaded, setLoaded] = useState(true);
+    
+    useEffect(() => {
+        if(window !== "undefined"){
+            const historyUser = localStorage.getItem('UserToken') || '';
+            setLoaded(false);
+        }
+    },[]);
 
     const changeEvent = () => {
         setHide(true);
     }
 
-    if (hide) {
+    if (hide || !user || loaded) {
         return null;
     }
 

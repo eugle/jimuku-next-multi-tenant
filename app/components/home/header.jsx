@@ -1,6 +1,7 @@
 "use client";
 
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
     Bars3Icon,
@@ -27,7 +28,39 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
+import basePath from "@/app/utils/config";
+
+async function getData(token) {
+    const res = await fetch(`${basePath}/auth/me`, {
+        method: 'GET',
+        headers: {
+            "x-tenant": "www",
+            "Content-Type": "application/json",
+            "authorization": "Bearer "+token
+        }
+    })
+   
+    return res.json()
+}
+
 export default function Header() {
+    const [user, setUser] = useState('');
+
+    const router = useRouter()
+
+    useEffect(() => {
+        if(window !== "undefined"){
+            const historyUser = localStorage.getItem('UserToken') || '';
+            
+            getData(historyUser).then(res => {
+                if(res.statusCode === 401){
+                    localStorage.setItem('UserToken', '')
+                }
+                setUser(res);
+            });
+        }
+    },[]);
+
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
@@ -117,8 +150,8 @@ export default function Header() {
                     </Link> */}
                 </Popover.Group>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Link href="/account/login" className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">
-                        登陆 <span aria-hidden="true">&rarr;</span>
+                    <Link href={user ? "/account" : "/account/login"} className="text-sm font-semibold leading-6 text-gray-900 hover:text-gray-700">
+                        {user ? '会员中心' : '登陆'} <span aria-hidden="true">&rarr;</span>
                     </Link>
                 </div>
             </nav>
@@ -199,10 +232,10 @@ export default function Header() {
                             </div>
                             <div className="py-6">
                                 <Link
-                                    href="/account/login"
+                                    href={user ? "/account" : "/account/login"}
                                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                 >
-                                    登陆 <span aria-hidden="true">&rarr;</span>
+                                    {user ? '会员中心' : '登陆'} <span aria-hidden="true">&rarr;</span>
                                 </Link>
                             </div>
                         </div>

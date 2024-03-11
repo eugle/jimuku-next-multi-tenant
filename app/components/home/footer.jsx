@@ -1,9 +1,18 @@
 "use client";
 
+import {useState, useEffect} from 'react'
 import dayjs from 'dayjs'
 import Link from 'next/link';
 
 export default function Footer() {
+    const [user, setUser] = useState('');
+    
+    useEffect(() => {
+        if(window !== "undefined"){
+            setUser(localStorage.getItem('UserToken') || '');
+        }
+    },[]);
+
     return (
         <footer className="bg-white">
             <div className="container px-6 py-8 mx-auto max-w-7xl">
@@ -28,9 +37,9 @@ export default function Footer() {
                             </button>
                         </Link>
                         <div className='p-2 sm:p-0'/>
-                        <Link href='/account/login'>
+                        <Link href={user?"/website/create":"/account/register"}>
                             <button className="w-full px-5 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-indigo-600 rounded-md sm:mx-2 sm:order-2 sm:w-auto hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                                立即创建
+                            {user?'快速创建':'免费注册'}
                             </button>
                         </Link>
                     </div>
