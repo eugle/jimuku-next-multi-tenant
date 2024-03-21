@@ -3,33 +3,17 @@
 import { useState, useRef } from "react";
 import { useRouter } from 'next/navigation';
 import Link from "next/link";
-import basePath from "@/app/utils/config";
 import cogoToast from '@successtar/cogo-toast';
-
-async function createUser(data) {
-    const res = await fetch(`${basePath}/user`, {
-        method: 'POST',
-        headers: {
-            "x-tenant": "www",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    })
-   
-    if (!res.ok) {
-      throw new Error('Failed to fetch data')
-    }
-   
-    return res.json()
-}
 
 export default function SignUp() {
     const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repassword, setRePassword] = useState("");
     const [desabled, setDesabled] = useState('');
 
     const refusername = useRef(null);
+    const refemail = useRef(null);
     const refpassword = useRef(null);
 
     const router = useRouter()
@@ -79,16 +63,25 @@ export default function SignUp() {
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                     <form className="space-y-6" onSubmit={handleSubmit}>
-                        <div>
+                        {/* <div>
                             <label htmlFor="username" className="block text-sm font-medium leading-4 text-gray-900">
-                                登陆名
+                                二级域名
                             </label>
                             <div className="mt-2">
                                 <input ref={refusername} desabled={desabled} id="username" name="username" type="username" autoComplete="username" value={username} onChange={(e) => setUsername(e.target.value)} className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
-                        </div>
+                        </div> */}
 
-                        <div>
+                        {/* <div>
+                            <label htmlFor="email" className="block text-sm font-medium leading-4 text-gray-900">
+                                登陆邮箱
+                            </label>
+                            <div className="mt-2">
+                                <input ref={refemail} desabled={desabled} id="email" name="email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            </div>
+                        </div> */}
+
+                        {/* <div>
                             <div className="flex items-center justify-between">
                                 <label htmlFor="password" className="block text-sm font-medium leading-4 text-gray-900">
                                     密码
@@ -97,9 +90,9 @@ export default function SignUp() {
                             <div className="mt-2">
                                 <input ref={refpassword} desabled={desabled} id="password" name="password" type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
-                        </div>
+                        </div> */}
 
-                        <div>
+                        {/* <div>
                             <div className="flex items-center justify-between">
                                 <label htmlFor="re-password" className="block text-sm font-medium leading-4 text-gray-900">
                                     确认密码
@@ -108,22 +101,25 @@ export default function SignUp() {
                             <div className="mt-2">
                                 <input desabled={desabled} id="re-password" name="re-password" type="password" autoComplete="current-password" value={repassword} onChange={(e) => setRePassword(e.target.value)} className="block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
                             </div>
-                        </div>
+                        </div> */}
 
-                        <div>
+                        {/* <div>
                             <button className={`${desabled ? 'bg-gray-400 hover:bg-gray-400' : 'bg-indigo-600 hover:bg-indigo-500'} flex w-full justify-center rounded-md  px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
                                 type={desabled ? 'button' : "submit"}
                             >
                                 {desabled ? '正在注册，请稍等...' : '立即注册'}
                             </button>
-                        </div>
+                        </div> */}
                     </form>
 
                     <div className="mt-10 text-center text-sm text-gray-500">
                         <div className="p-4">
-                            已有账户?
+                            系统全面重构中，敬请期待
                         </div>
-                        <div>
+                        {/* <div className="p-4">
+                            已有账户?
+                        </div> */}
+                        {/* <div>
                             <Link href='/account/login'>
                                 <button className="flex w-full justify-center rounded-md bg-gray-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
                                     type="button"
@@ -132,7 +128,7 @@ export default function SignUp() {
                                 </button>
                             </Link>
 
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
