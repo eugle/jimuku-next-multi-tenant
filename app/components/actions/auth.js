@@ -4,7 +4,6 @@ async function getData(token) {
     const res = await fetch(`${basePath}/auth/me`, {
         method: 'GET',
         headers: {
-            "x-tenant": "www",
             "Content-Type": "application/json",
             "authorization": "Bearer "+token
         },

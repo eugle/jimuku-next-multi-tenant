@@ -1,17 +1,15 @@
 "use client";
 
-import { Fragment, useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation';
+import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
     Bars3Icon,
     DeviceTabletIcon,
     GlobeEuropeAfricaIcon,
-    FingerPrintIcon,
     ShoppingBagIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, ChatBubbleLeftEllipsisIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon, ChatBubbleLeftEllipsisIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link';
 
 const products = [
@@ -28,39 +26,8 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-import basePath from "@/app/utils/config";
-
-async function getData(token) {
-    const res = await fetch(`${basePath}/auth/me`, {
-        method: 'GET',
-        headers: {
-            "x-tenant": "www",
-            "Content-Type": "application/json",
-            "authorization": "Bearer "+token
-        }
-    })
-   
-    return res.json()
-}
-
 export default function Header() {
-    const [user, setUser] = useState('');
-
-    const router = useRouter()
-
-    useEffect(() => {
-        if(window !== "undefined"){
-            const historyUser = localStorage.getItem('UserToken') || '';
-            
-            getData(historyUser).then(res => {
-                if(res.statusCode === 401){
-                    localStorage.setItem('UserToken', '')
-                }else{
-                    setUser(res);
-                }
-            });
-        }
-    },[]);
+    const [user] = useState('');
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 

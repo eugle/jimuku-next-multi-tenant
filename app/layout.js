@@ -1,6 +1,9 @@
 /** @format */
 
 import React from 'react';
+import { cookies } from "next/headers";
+import { ClientLayout } from "./components/global/ClientLayout";
+import { ApolloWrapper } from "./components/apollo/ApolloWrapper";
 import './globals.css';
 
 export const metadata = {
@@ -12,10 +15,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+	const cookieStore = cookies();
+	const delay = Number(cookieStore.get("apollo-x-custom-delay")?.value ?? 1000);
+
 	return (
 		<html lang='en'>
 			<body className='min-w-[320px]'>
-				{children}
+				<ApolloWrapper delay={delay}>
+					<ClientLayout>
+						{children}
+					</ClientLayout>
+				</ApolloWrapper>
 			</body>
 		</html>
 	);
