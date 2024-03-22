@@ -2,10 +2,6 @@
 
 'use client';
 import {useState, useEffect} from 'react';
-
-import Header from '@/app/imports/lib/home/header';
-import Footer from '@/app/imports/lib/home/footer';
-
 import {useRouter} from 'next/navigation';
 import {PulseLoader} from 'react-spinners';
 
@@ -76,7 +72,6 @@ export default function Account() {
 
 	return (
 		<>
-			<Header />
             <div className="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8 border-b-[1px] border-gray-200">
                 <div className='p-36'>
                     <div className=''>
@@ -92,7 +87,6 @@ export default function Account() {
                     </div>
                 </div>
             </div>
-            <Footer />
 		</>
 	);
 }

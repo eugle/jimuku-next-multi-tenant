@@ -2,16 +2,11 @@
 
 'use client';
 
-import Banner from '@/app/imports/lib/home/banner';
-import Header from '@/app/imports/lib/home/header';
-import Footer from '@/app/imports/lib/home/footer';
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
 
 export default function Store() {
 	return (
 		<>
-			<Banner />
-			<Header />
 			<div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
 			<div className="absolute inset-0 -z-10 overflow-hidden">
 				<svg
@@ -60,7 +55,6 @@ export default function Store() {
 				</div>
 			</div>
 			</div>
-			<Footer />
 		</>
 	);
 }

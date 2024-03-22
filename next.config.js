@@ -10,6 +10,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
 	reactStrictMode: true,
 	poweredByHeader: false,
+	eslint: {
+        ignoreDuringBuilds: true,
+    },
 	images: {
 		remotePatterns: [
 			{

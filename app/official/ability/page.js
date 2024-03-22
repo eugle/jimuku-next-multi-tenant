@@ -2,9 +2,6 @@
 
 'use client';
 
-import Banner from '@/app/imports/lib/home/banner';
-import Header from '@/app/imports/lib/home/header';
-import Footer from '@/app/imports/lib/home/footer';
 import Link from 'next/link';
 import { XMarkIcon, CheckIcon, FingerPrintIcon, LockClosedIcon, RadioIcon, SquaresPlusIcon, ClipboardIcon, PhoneIcon } from '@heroicons/react/24/outline'
 
@@ -65,8 +62,6 @@ export default function Custom() {
 
 	return (
 		<>
-			<Banner />
-			<Header />
 			<div className="bg-white py-10 sm:py-24">
 				<div className="mx-auto max-w-7xl px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl lg:text-center">
@@ -117,7 +112,6 @@ export default function Custom() {
 					</div>
 				</div>
     		</div>
-			<Footer />
 		</>
 	);
 }

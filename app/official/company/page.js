@@ -2,10 +2,6 @@
 
 'use client';
 
-import Banner from '@/app/imports/lib/home/banner';
-import Header from '@/app/imports/lib/home/header';
-import Footer from '@/app/imports/lib/home/footer';
-
 export default function Custom() {
 	const links = [
 		{ name: 'Open roles', href: '#' },
@@ -22,8 +18,6 @@ export default function Custom() {
 
 	return (
 		<>
-			<Banner />
-			<Header />
 			<div className='max-w-2xl container mx-auto lg:max-w-7xl py-8'>
 				<div className='relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32'>
 					<img
@@ -92,7 +86,6 @@ export default function Custom() {
 					</div>
 				</div>
 			</div>
-			<Footer />
 		</>
 	);
 }

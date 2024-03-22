@@ -2,10 +2,6 @@
 
 'use client';
 
-import Banner from '@/app/imports/lib/home/banner';
-import Header from '@/app/imports/lib/home/header';
-import Footer from '@/app/imports/lib/custom/footer';
-
 const features = [
 	{ name: '品牌官网', description: '独一无二的专属品牌官网的定制设计' },
 	{
@@ -27,8 +23,6 @@ const features = [
 export default function Custom() {
 	return (
 		<>
-			<Banner />
-			<Header />
 			<div className='bg-white'>
 				<div className='mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8'>
 					<div>
@@ -65,7 +59,6 @@ export default function Custom() {
 					</div>
 				</div>
 			</div>
-			<Footer />
 		</>
 	);
 }
