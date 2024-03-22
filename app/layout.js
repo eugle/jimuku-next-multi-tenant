@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { cookies } from "next/headers";
-import { ClientLayout } from "./components/global/ClientLayout";
-import { ApolloWrapper } from "./components/apollo/ApolloWrapper";
+import { ClientLayout } from "./imports/lib/global/ClientLayout";
+import { ApolloWrapper } from "./imports/lib/apollo/ApolloWrapper";
 import './globals.css';
 
 export const metadata = {

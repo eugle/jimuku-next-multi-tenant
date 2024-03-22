@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { useRouter } from 'next/navigation';
 import Link from "next/link";
-import basePath from "@/app/utils/config";
+import basePath from "@/app/imports/utils/config";
 import cogoToast from '@successtar/cogo-toast';
 
 async function login(data) {

@@ -2,9 +2,9 @@
 
 'use client';
 
-import Banner from '@/app/components/home/banner';
-import Header from '@/app/components/home/header';
-import Footer from '@/app/components/custom/footer';
+import Banner from '@/app/imports/lib/home/banner';
+import Header from '@/app/imports/lib/home/header';
+import Footer from '@/app/imports/lib/custom/footer';
 
 const features = [
 	{ name: '品牌官网', description: '独一无二的专属品牌官网的定制设计' },

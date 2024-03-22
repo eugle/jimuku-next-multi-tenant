@@ -2,9 +2,9 @@
 
 'use client';
 
-import Banner from '@/app/components/home/banner';
-import Header from '@/app/components/home/header';
-import Footer from '@/app/components/home/footer';
+import Banner from '@/app/imports/lib/home/banner';
+import Header from '@/app/imports/lib/home/header';
+import Footer from '@/app/imports/lib/home/footer';
 
 export default function Custom() {
 	const links = [

@@ -3,13 +3,13 @@
 'use client';
 import {useState, useEffect} from 'react';
 
-import Header from '@/app/components/home/header';
-import Footer from '@/app/components/home/footer';
+import Header from '@/app/imports/lib/home/header';
+import Footer from '@/app/imports/lib/home/footer';
 
 import {useRouter} from 'next/navigation';
 import {PulseLoader} from 'react-spinners';
 
-import basePath from "@/app/utils/config";
+import basePath from "@/app/imports/utils/config";
 
 async function getData(token) {
     const res = await fetch(`${basePath}/auth/me`, {
