@@ -2,7 +2,7 @@
 "use client"
 
 import Hero from './official/home/hero';
-import Price from './official/home/price';
+import Price from './official/home/prices';
 import Introduce from './official/home/introduce';
 import Manage from './official/home/manage';
 
