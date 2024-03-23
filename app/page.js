@@ -4,7 +4,7 @@
 import Hero from './official/home/hero';
 import Price from './official/home/prices';
 import Introduce from './official/home/introduce';
-import Manage from './official/home/manage';
+// import Manage from './official/home/manage';
 
 import {useState, useEffect} from 'react'
 
