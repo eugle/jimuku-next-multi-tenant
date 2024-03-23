@@ -13,19 +13,8 @@ const nextConfig = {
 	eslint: {
         ignoreDuringBuilds: true,
     },
-	router: {
-		scrollBehavior(to,from,savePosition){
-			return {x:0,y:0}
-		}
-	},
 	images: {
 		remotePatterns: [
-			{
-				protocol: 'https',
-				hostname: 'www.orbis.com.ar',
-				port: '',
-				pathname: '/wp-content/themes/barberry/images/**',
-			},
 			{
 				protocol: 'https',
 				hostname: 'cdn.jimuku.com',
