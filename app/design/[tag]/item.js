@@ -1,25 +1,11 @@
 'use client';
 
-import Frame, {FrameContextConsumer} from 'react-frame-component'
+import { Content } from '../public/index'
 
 export default function Components ({item}) {
-    const Content = item.content;
+    const Model = Content[item.model || 'none'];
     
     return (
-        <Frame style={{}}>
-            <FrameContextConsumer>
-                {({document}) => {
-                    return (
-                        <StyleSheetManager target={document.head}>
-                            <Div className="change-scroll"
-                                 style={{}}
-                            >
-                                <Content />
-                            </Div>
-                        </StyleSheetManager>
-                    )
-                }}
-            </FrameContextConsumer>
-        </Frame>
+        <Model />
     )
 }

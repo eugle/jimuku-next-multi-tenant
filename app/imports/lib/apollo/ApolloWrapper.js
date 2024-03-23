@@ -1,7 +1,7 @@
 /** @format */
 
 'use client';
-import React from 'react';
+
 import { ApolloLink, HttpLink } from '@apollo/client';
 import clientCookies from 'js-cookie';
 import {
@@ -11,16 +11,16 @@ import {
 	SSRMultipartLink,
 } from '@apollo/experimental-nextjs-app-support/ssr';
 
-import { loadErrorMessages, loadDevMessages } from '@apollo/client/dev';
-import { setVerbosity } from 'ts-invariant';
+// import { loadErrorMessages, loadDevMessages } from '@apollo/client/dev';
+// import { setVerbosity } from 'ts-invariant';
 
 import basePath from '@/app/imports/utils/config';
 
-if (process.env.NODE_ENV === 'development') {
-	setVerbosity('debug');
-	loadDevMessages();
-	loadErrorMessages();
-}
+// if (process.env.NODE_ENV === 'development') {
+// 	setVerbosity('debug');
+// 	loadDevMessages();
+// 	loadErrorMessages();
+// }
 
 export function ApolloWrapper({ children, delay: delayProp }) {
 	return (

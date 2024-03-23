@@ -1,0 +1,14 @@
+import {gql} from '@apollo/client'
+
+export const GET_COMPONENT_TAG = gql`
+    query GET_COMPONENT_TAG($pagination: PaginationArg) {
+        componentTags(pagination: $pagination) {
+            data {
+                attributes {
+                title
+                identity
+                }
+            }
+        }
+    }
+`
