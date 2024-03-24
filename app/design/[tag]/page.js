@@ -24,11 +24,11 @@ export default function Block(){
             },
             filters: {
                 web_component_tags: {
-                  identity: {
+                    identity: {
                     eq: tag
-                  }
+                    }
                 }
-              }
+            }
         }
     });
 

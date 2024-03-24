@@ -50,10 +50,7 @@ import { useRouter } from "next/navigation"
           </select>
         </div>
         <div className="hidden sm:block">
-          <div className="border-b flex flex-row border-gray-200">
-            <div className="flex flex-1 text-sm font-medium items-center">
-              选择组件类型
-            </div>
+          <div className="border-b flex flex-1 justify-center border-gray-200">
             <nav className="-mb-px flex space-x-8" aria-label="Tabs">
               {data?.length > 0 && data.map(({attributes:tab}) => (
                 <button

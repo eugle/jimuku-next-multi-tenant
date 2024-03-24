@@ -3,6 +3,9 @@
 import dynamic from 'next/dynamic'
 
 /**
+ * pricing
+ * feature
+ * stats
  * heroes
  * header
  * banner
@@ -11,10 +14,54 @@ import dynamic from 'next/dynamic'
  * logo
  * content
  * team
+ * blog
+ * testimonials
+ * content-header
 */
 
 export const Content = {
     none: dynamic(() => import('./none')),
+    single_price_with_details: dynamic(() => import('./components/marketing/sections/pricing/single_price_with_details')),
+    two_tiers: dynamic(() => import('./components/marketing/sections/pricing/two_tiers')),
+    three_tiers_with_dividers: dynamic(() => import('./components/marketing/sections/pricing/three_tiers_with_dividers')),
+    three_tiers_with_emphasized_tier: dynamic(() => import('./components/marketing/sections/pricing/three_tiers_with_emphasized_tier')),
+    three_tiers_with_toggle: dynamic(() => import('./components/marketing/sections/pricing/three_tiers_with_toggle')),
+    three_tiers_with_toggle_on_dark: dynamic(() => import('./components/marketing/sections/pricing/three_tiers_with_toggle_on_dark')),
+    four_tiers_with_toggle: dynamic(() => import('./components/marketing/sections/pricing/four_tiers_with_toggle')),
+    two_tiers_with_extra_tier: dynamic(() => import('./components/marketing/sections/pricing/two_tiers_with_extra_tier')),
+    with_comparison_table: dynamic(() => import('./components/marketing/sections/pricing/with_comparison_table')),
+    with_comparison_table_on_dark: dynamic(() => import('./components/marketing/sections/pricing/with_comparison_table_on_dark')),
+    three_tiers_with_feature_comparison: dynamic(() => import('./components/marketing/sections/pricing/three_tiers_with_feature_comparison')),
+    two_tiers_with_emphasized_tier: dynamic(() => import('./components/marketing/sections/pricing/two_tiers_with_emphasized_tier')),
+
+    with_product_screenshot: dynamic(() => import('./components/marketing/sections/feature-sections/with_product_screenshot')),
+    centered_2x2_grid: dynamic(() => import('./components/marketing/sections/feature-sections/centered_2x2_grid')),
+    with_large_screenshot_on_dark: dynamic(() => import('./components/marketing/sections/feature-sections/with_large_screenshot_on_dark')),
+    with_large_screenshot: dynamic(() => import('./components/marketing/sections/feature-sections/with_large_screenshot')),
+    simple_three_column_with_small_icons: dynamic(() => import('./components/marketing/sections/feature-sections/simple_three_column_with_small_icons')),
+    simple_two_column_with_small_icons_on_dark: dynamic(() => import('./components/marketing/sections/feature-sections/simple_two_column_with_small_icons_on_dark')),
+    simple_three_column_with_large_icons: dynamic(() => import('./components/marketing/sections/feature-sections/simple_three_column_with_large_icons')),
+    simple_three_column_with_large_icons_on_dark: dynamic(() => import('./components/marketing/sections/feature-sections/simple_three_column_with_large_icons_on_dark')),
+    with_product_screenshot_on_left: dynamic(() => import('./components/marketing/sections/feature-sections/with_product_screenshot_on_left')),
+    with_product_screenshot_on_dark: dynamic(() => import('./components/marketing/sections/feature-sections/with_product_screenshot_on_dark')),
+    with_product_screenshot_panel: dynamic(() => import('./components/marketing/sections/feature-sections/with_product_screenshot_panel')),
+    contained_in_panel: dynamic(() => import('./components/marketing/sections/feature-sections/contained_in_panel')),
+    offset_2x2_grid: dynamic(() => import('./components/marketing/sections/feature-sections/offset_2x2_grid')),
+    with_code_example_panel: dynamic(() => import('./components/marketing/sections/feature-sections/with_code_example_panel')),
+    offset_with_feature_list: dynamic(() => import('./components/marketing/sections/feature-sections/offset_with_feature_list')),
+    feature_simple: dynamic(() => import('./components/marketing/sections/feature-sections/simple')),
+    
+    stats_simple: dynamic(() => import('./components/marketing/sections/stats-sections/simple')),
+    stats_simple_on_dark: dynamic(() => import('./components/marketing/sections/stats-sections/simple_on_dark')),
+    stats_simple_grid: dynamic(() => import('./components/marketing/sections/stats-sections/simple_grid')),
+    stats_simple_grid_on_dark: dynamic(() => import('./components/marketing/sections/stats-sections/simple_grid_on_dark')),
+    stats_with_background_image: dynamic(() => import('./components/marketing/sections/stats-sections/with_background_image')),
+    stats_split_with_image: dynamic(() => import('./components/marketing/sections/stats-sections/split_with_image')),
+    timeline: dynamic(() => import('./components/marketing/sections/stats-sections/timeline')),
+    stepped: dynamic(() => import('./components/marketing/sections/stats-sections/stepped')),
+    with_two_column_description_on_dark: dynamic(() => import('./components/marketing/sections/stats-sections/with_two_column_description_on_dark')),
+    with_description: dynamic(() => import('./components/marketing/sections/stats-sections/with_description')),
+    
     simple_centered: dynamic(() => import('./components/marketing/sections/heroes/simple_centered')),
     split_with_screenshot_on_dark: dynamic(() => import('./components/marketing/sections/heroes/split_with_screenshot_on_dark')),
     split_with_screenshot: dynamic(() => import('./components/marketing/sections/heroes/split_with_screenshot')),
@@ -97,6 +144,110 @@ export const Content = {
     content_simple_centered: dynamic(() => import('./components/marketing/sections/contact-sections/simple_centered')),
    
     with_small_images: dynamic(() => import('./components/marketing/sections/team-sections/with_small_images')),
-
+    with_large_images: dynamic(() => import('./components/marketing/sections/team-sections/with_large_images')),
+    grid_with_round_images: dynamic(() => import('./components/marketing/sections/team-sections/grid_with_round_images')),
+    dark_version_with_large_images: dynamic(() => import('./components/marketing/sections/team-sections/dark_version_with_large_images')),
+    with_image_and_short_paragraph: dynamic(() => import('./components/marketing/sections/team-sections/with_image_and_short_paragraph')),
+    with_vertical_images: dynamic(() => import('./components/marketing/sections/team-sections/with_vertical_images')),
+    full_width_with_vertical_images: dynamic(() => import('./components/marketing/sections/team-sections/full_width_with_vertical_images')),
+    grid_with_large_round_images: dynamic(() => import('./components/marketing/sections/team-sections/grid_with_large_round_images')),
+    with_medium_images_on_dark: dynamic(() => import('./components/marketing/sections/team-sections/with_medium_images_on_dark')),
     
+    three_column: dynamic(() => import('./components/marketing/sections/blog-sections/three_column')),
+    three_column_with_images: dynamic(() => import('./components/marketing/sections/blog-sections/three_column_with_images')),
+    three_column_with_background_images: dynamic(() => import('./components/marketing/sections/blog-sections/three_column_with_background_images')),
+    single_column: dynamic(() => import('./components/marketing/sections/blog-sections/single_column')),
+    single_column_with_images: dynamic(() => import('./components/marketing/sections/blog-sections/single_column_with_images')),
+    with_featured_post: dynamic(() => import('./components/marketing/sections/blog-sections/with_featured_post')),
+    with_photo_and_list: dynamic(() => import('./components/marketing/sections/blog-sections/with_photo_and_list')),
+   
+    testimonials_simple_centered: dynamic(() => import('./components/marketing/sections/testimonials/simple_centered')),
+    with_large_avatar: dynamic(() => import('./components/marketing/sections/testimonials/with_large_avatar')),
+    with_overlapping_image: dynamic(() => import('./components/marketing/sections/testimonials/with_overlapping_image')),
+    with_background_image: dynamic(() => import('./components/marketing/sections/testimonials/with_background_image')),
+    testimonials_side_by_side: dynamic(() => import('./components/marketing/sections/testimonials/side_by_side')),
+    side_by_side_on_dark: dynamic(() => import('./components/marketing/sections/testimonials/side_by_side_on_dark')),
+    testimonials_grid: dynamic(() => import('./components/marketing/sections/testimonials/grid')),
+    off_white_grid: dynamic(() => import('./components/marketing/sections/testimonials/off_white_grid')),
+    with_star_rating: dynamic(() => import('./components/marketing/sections/testimonials/with_star_rating')),
+    
+    with_stats: dynamic(() => import('./components/marketing/sections/header/with_stats')),
+    content_centered: dynamic(() => import('./components/marketing/sections/header/centered')),
+    centered_with_eyebrow: dynamic(() => import('./components/marketing/sections/header/centered_with_eyebrow')),
+    simple_with_eyebrow: dynamic(() => import('./components/marketing/sections/header/simple_with_eyebrow')),
+    centered_on_dark: dynamic(() => import('./components/marketing/sections/header/centered_on_dark')),
+    with_cards: dynamic(() => import('./components/marketing/sections/header/with_cards')),
+    content_simple: dynamic(() => import('./components/marketing/sections/header/simple')),
+    content_simple_on_dark: dynamic(() => import('./components/marketing/sections/header/simple_on_dark')),
+    simple_with_background_image: dynamic(() => import('./components/marketing/sections/header/simple_with_background_image')),
+    centered_with_background_image: dynamic(() => import('./components/marketing/sections/header/centered_with_background_image')),
+    
+    dark_panel_with_app_screenshot: dynamic(() => import('./components/marketing/sections/cta-sections/dark_panel_with_app_screenshot')),
+    simple_stacked: dynamic(() => import('./components/marketing/sections/cta-sections/simple_stacked')),
+    centered_on_dark_panel: dynamic(() => import('./components/marketing/sections/cta-sections/centered_on_dark_panel')),
+    cta_simple_centered: dynamic(() => import('./components/marketing/sections/cta-sections/simple_centered')),
+    cta_simple_centered_on_dark: dynamic(() => import('./components/marketing/sections/cta-sections/simple_centered_on_dark')),
+    simple_centered_on_brand: dynamic(() => import('./components/marketing/sections/cta-sections/simple_centered_on_brand')),
+    simple_justified: dynamic(() => import('./components/marketing/sections/cta-sections/simple_justified')),
+    cta_split_with_image: dynamic(() => import('./components/marketing/sections/cta-sections/split_with_image')),
+    two_columns_with_photo_on_dark: dynamic(() => import('./components/marketing/sections/cta-sections/two_columns_with_photo_on_dark')),
+    cta_with_image_tiles: dynamic(() => import('./components/marketing/sections/cta-sections/with_image_tiles')),
+    
+    side_by_side_with_details: dynamic(() => import('./components/marketing/sections/newsletter-sections/side_by_side_with_details')),
+    simple_side_by_side: dynamic(() => import('./components/marketing/sections/newsletter-sections/simple_side_by_side')),
+    simple_side_by_side_on_dark: dynamic(() => import('./components/marketing/sections/newsletter-sections/simple_side_by_side_on_dark')),
+    newsletter_simple_stacked: dynamic(() => import('./components/marketing/sections/newsletter-sections/simple_stacked')),
+    centered_card: dynamic(() => import('./components/marketing/sections/newsletter-sections/centered_card')),
+    side_by_side_on_card: dynamic(() => import('./components/marketing/sections/newsletter-sections/side_by_side_on_card')),
+    
+    contact_cards_with_small_portraits: dynamic(() => import('./components/application-ui/lists/grid-lists/contact_cards_with_small_portraits')),
+    contact_cards: dynamic(() => import('./components/application-ui/lists/grid-lists/contact_cards')),
+    actions_with_shared_borders: dynamic(() => import('./components/application-ui/lists/grid-lists/actions_with_shared_borders')),
+    images_with_details: dynamic(() => import('./components/application-ui/lists/grid-lists/images_with_details')),
+    
+    ecommerce_simple: dynamic(() => import('./components/ecommerce/components/product-lists/simple')),
+    with_inline_price: dynamic(() => import('./components/ecommerce/components/product-lists/with_inline_price')),
+    with_color_swatches_and_horizontal_scrolling: dynamic(() => import('./components/ecommerce/components/product-lists/with_color_swatches_and_horizontal_scrolling')),
+    with_tall_images: dynamic(() => import('./components/ecommerce/components/product-lists/with_tall_images')),
+    with_image_overlay_and_add_button: dynamic(() => import('./components/ecommerce/components/product-lists/with_image_overlay_and_add_button')),
+    with_border_grid: dynamic(() => import('./components/ecommerce/components/product-lists/with_border_grid')),
+    card_with_full_details: dynamic(() => import('./components/ecommerce/components/product-lists/card_with_full_details')),
+    
+    procuct_three_column: dynamic(() => import('./components/ecommerce/components/category-previews/three_column')),
+    with_image_backgrounds: dynamic(() => import('./components/ecommerce/components/category-previews/with_image_backgrounds')),
+    with_background_image_and_detail_overlay: dynamic(() => import('./components/ecommerce/components/category-previews/with_background_image_and_detail_overlay')),
+    three_column_with_description: dynamic(() => import('./components/ecommerce/components/category-previews/three_column_with_description')),
+    with_scrolling_cards: dynamic(() => import('./components/ecommerce/components/category-previews/with_scrolling_cards')),
+    with_split_images: dynamic(() => import('./components/ecommerce/components/category-previews/with_split_images')),
+    
+    with_image_grid: dynamic(() => import('./components/ecommerce/components/product-features/with_image_grid')),
+    with_header__images__and_descriptions: dynamic(() => import('./components/ecommerce/components/product-features/with_header__images__and_descriptions')),
+    with_fading_image: dynamic(() => import('./components/ecommerce/components/product-features/with_fading_image')),
+    with_wide_images: dynamic(() => import('./components/ecommerce/components/product-features/with_wide_images')),
+    with_tiered_images: dynamic(() => import('./components/ecommerce/components/product-features/with_tiered_images')),
+    with_tabs: dynamic(() => import('./components/ecommerce/components/product-features/with_tabs')),
+    with_alternating_sections: dynamic(() => import('./components/ecommerce/components/product-features/with_alternating_sections')),
+    with_split_image: dynamic(() => import('./components/ecommerce/components/product-features/with_split_image')),
+    product_with_tiered_images: dynamic(() => import('./components/ecommerce/components/product-features/with_tiered_images')),
+    
+    promo_with_image_tiles: dynamic(() => import('./components/ecommerce/components/promo-sections/with_image_tiles')),
+    with_fading_background_image_and_testimonials: dynamic(() => import('./components/ecommerce/components/promo-sections/with_fading_background_image_and_testimonials')),
+    full_width_with_background_image: dynamic(() => import('./components/ecommerce/components/promo-sections/full_width_with_background_image')),
+    full_width_with_overlapping_image_tiles: dynamic(() => import('./components/ecommerce/components/promo-sections/full_width_with_overlapping_image_tiles')),
+    promo_with_background_image: dynamic(() => import('./components/ecommerce/components/promo-sections/with_background_image')),
+    with_overlapping_image_tiles: dynamic(() => import('./components/ecommerce/components/promo-sections/with_overlapping_image_tiles')),
+    with_offers_and_split_image: dynamic(() => import('./components/ecommerce/components/promo-sections/with_offers_and_split_image')),
+    full_width_with_background_image_and_large_content: dynamic(() => import('./components/ecommerce/components/promo-sections/full_width_with_background_image_and_large_content')),
+    
+    '3_column_with_illustrations_and_header': dynamic(() => import('./components/ecommerce/components/incentives/3_column_with_illustrations_and_header')),
+    '4_column_with_illustrations': dynamic(() => import('./components/ecommerce/components/incentives/4_column_with_illustrations')),
+    '3_column_with_illustrations_and_split_header': dynamic(() => import('./components/ecommerce/components/incentives/3_column_with_illustrations_and_split_header')),
+    '3_column_with_illustrations_and_centered_text': dynamic(() => import('./components/ecommerce/components/incentives/3_column_with_illustrations_and_centered_text')),
+    '3_column_with_illustrations_and_heading': dynamic(() => import('./components/ecommerce/components/incentives/3_column_with_illustrations_and_heading')),
+    '2x2_grid_with_illustrations': dynamic(() => import('./components/ecommerce/components/incentives/2x2_grid_with_illustrations')),
+    '3_column_with_icons_and_supporting_text': dynamic(() => import('./components/ecommerce/components/incentives/3_column_with_icons_and_supporting_text')),
+    '3_column_with_icons': dynamic(() => import('./components/ecommerce/components/incentives/3_column_with_icons')),
+    
+    
+
 }

@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function Hero({user}) {
     return (
             <div className="relative z-10 isolate p-6 lg:p-8">
-                <div className="mx-auto max-w-2xl py-32 sm:py-24 lg:py-36">
-                    <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+                <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+                    <div className="hidden sm:mb-8 sm:flex sm:justify-center"> 
                         <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                             同时拥有H5移动端、电脑PC端、微信公众号的响应式网站
                             {/* <Link href="/official/h5" className="font-semibold text-indigo-600">

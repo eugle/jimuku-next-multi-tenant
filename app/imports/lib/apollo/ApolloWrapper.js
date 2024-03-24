@@ -23,11 +23,6 @@ import basePath from '@/app/imports/utils/config';
 // }
 
 export function ApolloWrapper({ children, delay: delayProp }) {
-	return (
-		<ApolloNextAppProvider makeClient={makeClient}>
-			{children}
-		</ApolloNextAppProvider>
-	);
 
 	function makeClient() {
 		const httpLink = new HttpLink({
@@ -68,4 +63,10 @@ export function ApolloWrapper({ children, delay: delayProp }) {
 			link,
 		});
 	}
+
+	return (
+		<ApolloNextAppProvider makeClient={makeClient}>
+			{children}
+		</ApolloNextAppProvider>
+	);
 }
