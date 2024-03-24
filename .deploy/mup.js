@@ -49,17 +49,10 @@ module.exports = {
 		deployCheckWaitTime: 600, //default 10部署完成后检查的等待时间（如果网络不是很好需要加大）
 	},
 	proxy: {
-		domains: 'jimuku.com',
-		// shared: {
-		// 	env: {
-		// 		DEFAULT_HOST: 'jimuku.com',
-		// 	},
-		// },
+		domains: 'jimuku.com,www.jimuku.com',
 		loadBalancing: true,
 		ssl: {
 			forceSSL: true,
-			// crt: './chain.crt', 使用自定义域名解决通配符问题没找到SSL通配符免费证书，先不启用子域名ssl，如果需要，手动添加一个mup配置指向3008并且使用ssl加密
-			// key: './key.key',
 			letsEncryptEmail: 'sz@eugle.cn',
 		},
 	},

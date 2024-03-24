@@ -36,7 +36,7 @@ jobs:
             - name: Publish to Docker Repository
               uses: elgohr/Publish-Docker-Github-Action@master
               with:
-                  name: eugle/jimuku-next-multi-tenant
+                  name: eugle/jimuku-next-front
                   username: ${{ env.DOCKER_USERNAME }}
                   password: ${{ env.DOCKER_PASSWORD }}
             - name: Connect to remote server and run command
@@ -48,7 +48,7 @@ jobs:
                   port: ${{ env.SSH_PORT }}
                   sync: true
                   script: |
-                      docker pull eugle/jimuku-next-multi-tenant:latest
+                      docker pull eugle/jimuku-next-front:latest
                       docker stop jimuku.com
                       docker rm jimuku.com
-                      docker run -itd --name jimuku.com -v /home/wwwroot/next/domain/jimuku/data:/data -p 3002:3000 eugle/jimuku-next-multi-tenant:latest
+                      docker run -itd --name jimuku.com -v /home/wwwroot/next/domain/jimuku/data:/data -p 3002:3000 eugle/jimuku-next-front:latest
