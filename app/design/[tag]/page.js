@@ -43,7 +43,7 @@ export default function Block(){
 
     const handlePaginationNext = () => {
         animateScroll.scrollToTop();
-        setStart(10)     
+        setStart(start + 10)     
     }
 
     return (

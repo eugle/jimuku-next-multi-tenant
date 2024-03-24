@@ -2,21 +2,20 @@
 "use client"
 
 import Hero from './official/home/hero';
-import Price from './official/home/prices';
+import Price from './official/home/price';
 import Introduce from './official/home/introduce';
-// import Manage from './official/home/manage';
-
-import {useState, useEffect} from 'react'
+import Fading from './official/home/fading'
+import Testimonials from './official/home/testimonials'
 
 export default function Home() {
-	const [user] = useState('');
 
 	return (
 		<main>
-			<Hero user={user}/>
-			<Price user={user}/>
-			<Introduce />
-			{/* <Manage /> */}
+			<Hero />
+			<Price />
+			{/* <Fading/>
+			<Introduce/> */}
+			<Testimonials />
 		</main>
 	);
 }

@@ -47,11 +47,9 @@ const navigation = {
   export default function Example() {
     return (
       <footer className="bg-white" aria-labelledby="footer-heading">
-        <h2 id="footer-heading" className="sr-only">
-          Footer
-        </h2>
-        <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-          <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div className="mx-auto max-w-7xl px-6 pb-6 lg:px-8">
+        {/* <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32"> 备份上行*/}
+          {/* <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8">
               <img
                 className="h-7"
@@ -125,28 +123,27 @@ const navigation = {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
             
-          <div className="flex flex-col items-center sm:flex-row sm:justify-between">
-                    <div className="text-sm text-gray-700 font-light">
-                        © Copyright {dayjs().format('YYYY')}.
-                        <Link href='https://jimuku.com/' target="_blank">
-                            <span className="text-gray-700 text-sm px-2 hover:text-gray-500 duration-300">
-                                积木库
-                            </span>
-                        </Link>
-                        All Rights Reserved.
-                    </div>
+            <div className="flex flex-col items-center sm:flex-row sm:justify-between">
+                  <div className="text-sm text-gray-700 font-light">
+                      © Copyright {dayjs().format('YYYY')}.
+                      <Link href='https://jimuku.com/' target="_blank">
+                          <span className="text-gray-700 text-sm px-2 hover:text-gray-500 duration-300">
+                              积木库
+                          </span>
+                      </Link>
+                  </div>
 
-                    <div className="flex mt-3 sm:mt-0">
-                        <Link href='https://beian.miit.gov.cn/' target="_blank">
-                            <div className="text-gray-700 text-sm hover:text-gray-500 duration-300 font-light">
-                                蜀ICP备2023015175号
-                            </div>
-                        </Link>
-                    </div>
-                </div>
+                  <div className="flex mt-3 sm:mt-0">
+                      <Link href='https://beian.miit.gov.cn/' target="_blank">
+                          <div className="text-gray-700 text-sm hover:text-gray-500 duration-300 font-light">
+                              蜀ICP备2023015175号
+                          </div>
+                      </Link>
+                  </div>
+              </div>
           </div>
         </div>
       </footer>
